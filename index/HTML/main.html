@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FTT 메인</title>
+    <link rel="stylesheet" href="../CSS/main-header.css" />
+    <link rel="stylesheet" href="../CSS/main.css" />
+    <link rel="stylesheet" href="../CSS/total.css" />
+    <link rel="stylesheet" href="../CSS/modal.css" />
+    <!-- 케러셀 CSS -->
+     <link rel="stylesheet" href="../CSS/slide-main.css">
+  </head>
+  <style>
+    body{
+      height: 100%;
+      background-color: #333;
+    }
+
+    
+  </style>
+  <body>
+    <header>
+      <div class="container">
+        <h1>
+          <a href="#"> FTT </a>
+        </h1>
+        <div id="header-menu">
+          <nav id="gnb">
+            <ul>
+              <li class="g-main">
+                <a href="http://127.0.0.1:5501/index/HTML/find.html">검색</a>
+                <!-- <ul class="g-sub">
+                  <li><a class="g-sub-item" href="#">한국어</a></li>
+                  <li><a class="g-sub-item" href="#">영어</a></li>
+                  <li><a class="g-sub-item" href="#">일본어</a></li>
+                </ul> -->
+              </li>
+              <li class="g-main">
+                <a href="http://127.0.0.1:5501/index/HTML/membership.html"
+                  >멤버십</a
+                >
+              </li>
+              <li class="g-main">
+                <a href="#" class="logOut">로그아웃</a>
+              </li>
+            </ul>
+          </nav>
+          <nav id="lnb">
+            <ul>
+              <li class="l-main">
+                <a href="#">홈</a>
+              </li>
+              <li class="l-main">
+                <a href="http://127.0.0.1:5501/index/HTML/Kate.html">카테고리</a>
+              </li>
+              <li class="l-main">
+                <a href="http://127.0.0.1:5501/index/HTML/myPage.html">MY</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- 이미지 모달창 시작 -->
+    <div class="modal-img-back">
+      <div class="modal-img-win">
+        <!-- <img src="../../resources/image/스포츠/spo1.jpg" alt=""> -->
+      </div>
+      <!-- 이미지 모달창 종료 -->
+    </div>
+    <main>
+      <div class="main-container">
+        <div class="main-content">
+          
+          <!-- 케러셀 시작-->
+          <div class="slide-container">
+            <h2 class="new">신작영화</h2>
+            <div class="gallery gallery1">
+            </div>
+            <div class="swiper-button-next"><iconify-icon icon="maki:arrow" class="next-arrow"></iconify-icon></div>
+            <div class="swiper-button-prev"><iconify-icon icon="maki:arrow" class="prev-arrow"></iconify-icon></div>
+          </div>
+          <!-- 케러셀 종료 -->
+        </div>
+        <div class="main-content">
+          <!-- 케러셀 시작-->
+          <div class="slide-container">
+            <h2 class="new">추천영화</h2>
+            <div class="gallery gallery2">
+            </div>
+            <div class="swiper-button-next"><iconify-icon icon="maki:arrow" class="next-arrow"></iconify-icon></div>
+            <div class="swiper-button-prev"><iconify-icon icon="maki:arrow" class="prev-arrow"></iconify-icon></div>
+          </div>
+          <!-- 케러셀 종료 -->
+        </div>
+        <div class="main-content">
+          <div class="slide-container">
+            <h2 class="new">인기영화</h2>
+            <div class="gallery gallery3">
+            </div>
+            <div class="swiper-button-next"><iconify-icon icon="maki:arrow" class="next-arrow"></iconify-icon></div>
+            <div class="swiper-button-prev"><iconify-icon icon="maki:arrow" class="prev-arrow"></iconify-icon></div>
+          </div>
+          <!-- 케러셀 종료 -->
+      </div>
+
+      <footer>
+        <div class="footer-fot">
+          <div class="fot-content">
+            <div class="fot-content-main">
+              <!-- <p>
+                <span>자주 묻는 질문 </span><span>고객센터</span>
+                <span>계정</span>
+                <span>미디어 센터</span>
+              </p>
+              <p>
+                <span>투자 정보 </span><span>입사 정보</span>
+                <span>FTT 지원 디바이스</span>
+                <span>이용 약관</span>
+              </p>
+              <p>
+                <span>개인정보 처리방침 </span><span>쿠키 설정</span>
+                <span>회사 정보</span>
+                <span>문의하기</span>
+              </p>
+              <p>
+                <span>속도 테스트 </span><span>법적 고지</span>
+                <span>FTT</span>
+              </p> -->
+              <ul class="qes">
+                <li>
+                  질문이 있으신가요? 문의 전화: 00-123-456-7890
+                  <ul>
+                    <li>자주 묻는 질문</li>
+                    <li>투자 정보</li>
+                    <li>개인정보 처리방침</li>
+                    <li>속도 테스트</li>
+                  </ul>
+                  <ul>
+                    <li>고객 센터</li>
+                    <li>입사 정보</li>
+                    <li>쿠키 설정</li>
+                    <li>법적 고지</li>
+                  </ul>
+                  <ul>
+                    <li>계정</li>
+                    <li>FTT 지원 디바이스</li>
+                    <li>회사 정보</li>
+                    <li>FTT</li>
+                  </ul>
+                  <ul>
+                    <li>미디어 센터</li>
+                    <li>이용 약관</li>
+                    <li>문의하기</li>
+                    <li></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                FTT 대한민국
+                <li>
+                  FTT서비시스코리아 유한회사 통신판매업신고번호:
+                  제2023-대전광역시 선화동- DW아카데미 전화번호:
+                  00-12-123-1324 (수신자 부담) 대표: 홍길동 이메일 주소:
+                  korea@FTT.com 주소: 대한민국 대전광역시 중구 선화동
+                  사업자등록번호: 123-54-678900
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+    
+  </body>
+  <script
+  src="https://code.jquery.com/jquery-3.6.4.js"
+  integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+  crossorigin="anonymous"
+></script>
+<!-- jQuery -->
+  <script src="../JS/main.js"></script>
+  <script src="../JS/logout.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- 케러셀 자바스크립트 -->
+  <script src="../JS/slide.js"></script>
+  <script src="../JS/gallery1.js"></script>
+  <script src="../JS/gallery2.js"></script>
+  <script src="../JS/gallery3.js"></script>
+  <!-- <script src="../JS/mainvideo.js"></script> -->
+  <script src="../JS/mainvideo1.js"></script>
+  <script src="../JS/mainvideo2.js"></script>
+  <script src="../JS/mainvideo3.js"></script>
+  <!-- 아이콘 자바스크립트 -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector("header");
+  const scrollOffset = 10; // Adjust this value based on when you want the color change to occur
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > scrollOffset) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+  
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mainContainer = document.querySelector(".main-container");
+
+    // Function to create and append images
+    // function createImage(className) {
+    //   const img = document.createElement("img");
+    //   img.src = "path/to/your/image.png"; // Replace with the path to your image
+    //   img.classList.add("scroll-image", className);
+    //   document.body.appendChild(img);
+    //   return img;
+    // }
+
+    // const leftImage = createImage("left-image");
+    // const rightImage = createImage("right-image");
+
+    // Event listener for scrolling
+    window.addEventListener("scroll", function () {
+      // Calculate the opacity based on scroll position
+      const opacity = Math.min(1, window.scrollY / 100); // Adjust the value as needed
+
+      // Set the opacity for the images
+      // leftImage.style.opacity = opacity;
+      // rightImage.style.opacity = opacity;
+    });
+  });
+
+//   const logout = document.querySelector(".g-main .logOut");
+
+//   const memberInfo = {
+//         memberId: "",
+//         memberPassword: "",
+//         memberName: "",
+//         memberBirth: "",
+//         memberPhoneNumber: "",
+//         membergender: "",
+//         memberLanguage: "",
+//       };
+
+//        const pay = {
+//         payName: "",
+//         payQuality: "",
+//         payUse: "",
+//         payWaych: "",
+//         pay: "",
+//         payMoney: "",
+//       };
+// logout.addEventListener("click", function () {
+//   const out = confirm("로그아웃 하시겠습니까?");
+//   if (out == true) {
+//     addDatas(memberInfo).then(function () {
+//                       alert("탈퇴되었습니다. 안녕히 가세요.");
+//                       location.href = "http://127.0.0.1:5501/index/HTML/page.html";
+//                     });
+//   } else {
+//     alert("감사합니다.");
+//   }
+// });
+
+
+</script>
+</html>

@@ -1,0 +1,218 @@
+main {
+  width: 100%;
+  height: 100%;
+}
+.main-container {
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.slide-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.main-content {
+  padding: 1rem 0;
+  scrollbar-width: none;
+  /* 익스플로러 스크롤바 없애기 */
+  -ms-overflow-style: none;
+  /* overflow: hidden; */
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.new {
+  font-size: 32px;
+  color: white;
+}
+/* .gallery {
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  margin: 0 auto;
+  overflow: hidden;
+} */
+
+/* .gallery > li > img {
+  width: 400px;
+  height: 100%;
+} */
+
+/* .main-box {
+  width: 100%;
+  margin: 100px 0 0;
+}
+
+.main-movie-wrapper {
+  margin: 0 auto 2rem;
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.main-movie-wrapper h2 {
+  width: 1050px;
+  color: white;
+}
+
+.img-all-wrap {
+  display: flex;
+  flex-basis: 25%;
+  flex-shrink: 0;
+  gap: 1rem;
+}
+
+.img-wrap {
+  width: 200px;
+  height: 350px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.img-wrap.modal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 550px;
+  padding: 5px;
+  z-index: 10;
+  background-color: khaki;
+}
+
+.text {
+  margin: 10px 0;
+  padding: 0 10px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.text.visible {
+  opacity: 1;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: all 0.5s ease;
+  pointer-events: none;
+} */
+
+/* ~ sibling 형제중에 */
+/* .box.modal ~ .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-movie {
+  background-color: aqua;
+  width: 100%;
+  max-width: 700px;
+  height: 800px;
+
+}
+
+.modal-movie .modal-img-wrap {
+  width: 100%;
+}
+
+.modal-movie .modal-img-wrap img {
+  width: 100%;
+  height: 400px;
+  object-fit: fill;
+} */
+footer {
+  height: 100%;
+}
+.footer-fot {
+  height: 100%;
+}
+.fot-content {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: white;
+  background-color: black;
+  height: 370px;
+  padding: 1rem;
+}
+.fot-content > p {
+  padding-left: 2rem;
+}
+.fot-content-main {
+  /* background-color: black; */
+  color: white;
+  height: 90%;
+  margin-top: 1rem;
+}
+
+.fot-content-main > .qes > li > ul {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.fot-content-main > .qes > li > ul > li {
+  width: 200px;
+  flex-grow: 1;
+}
+/* sticky 부분 영역 */
+.st-content {
+  width: 100px;
+  height: 200px;
+  /* position: sticky; */
+  position: fixed;
+  bottom: 100px;
+  /* left: 93.5%; */
+  right: 25px;
+  /* background-color: red;
+  color: white;
+  border-radius: 50%; */
+}
+
+.content-top {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+.content-bottom {
+  margin-top: 8px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}

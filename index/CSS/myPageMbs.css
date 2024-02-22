@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.mypop {
+  min-height: 1240px;
+  height: 100%;
+  background-color: #1b1b1b;
+}
+
+.page-top {
+  margin-bottom: 40px;
+  padding: 40px 0;
+  background-color: #252525;
+}
+
+.page-title {
+  font-size: 24px;
+  line-height: 36px;
+  color: #fff;
+  font-weight: 400;
+  padding: 20px;
+}
+
+.page-top .btn-wrap .btn-positive {
+  border-color: blue;
+  background-color: blue;
+}
+
+.page-top .btn-wrap .btn-radius {
+  border: 1px solid transparent;
+  border-radius: 23px;
+}
+
+.page-top .btn-wrap .btn-large {
+  width: 187px;
+  height: 48px;
+  font-size: 16px;
+  line-height: 44px;
+}
+
+.page-top .btn-wrap .btn {
+  display: inline-block;
+  padding: 0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: center;
+}
+
+.page-top-inner-wrap {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.page-top .btn-wrap {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  z-index: 1;
+  padding: 0;
+}
+
+.blind {
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+.my-pay-table {
+  width: 100%;
+  max-width: 1600px;
+  border-top: 2px solid #2f2f2f;
+  margin: 0 auto 20px;
+}
+
+table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.my-pay-table th {
+  height: 47px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #a5a5a5;
+}
+
+.my-pay-table tbody td {
+  text-align: center;
+  height: 56px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #a5a5a5;
+  padding: 20px 0;
+}
+
+.my-pay-table thead {
+  border-bottom: 1px solid #2f2f2f;
+}
+
+.my-pay-table tbody tr {
+  border-bottom: 1px solid #2f2f2f;
+}
+
+span {
+  font-size: 14px;
+  line-height: 19px;
+  color: #5e5e5e;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.pading-type02 {
+  padding-bottom: 80px;
+  margin: 0 auto;
+  text-align: center;
+  clear: both;
+}
+
+.pading-type02 a.on {
+  border: 1px solid #fff;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.pading-type02 a {
+  display: inline-block;
+  min-width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 14px;
+  line-height: 32px;
+}
+.pratner-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pratner-info span {
+  font-size: 14px;
+  line-height: 19px;
+  color: #5e5e5e;
+}

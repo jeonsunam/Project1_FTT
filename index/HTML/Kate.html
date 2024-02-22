@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kate</title>
+    <!-- <link rel="stylesheet" href="../../resources/css/nav.css" /> -->
+    <link rel="stylesheet" href="../CSS/main-header.css" />
+    <link rel="stylesheet" href="../CSS/kate.css" />
+    <!-- <link rel="stylesheet" href="../CSS/login.css" /> -->
+    <link rel="stylesheet" href="../CSS/total.css" />
+    <link rel="stylesheet" href="../CSS/modal.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1>
+          <a href="http://127.0.0.1:5501/index/HTML/main.html">FTT </a>
+        </h1>
+        <div id="header-menu">
+          <nav id="gnb">
+            <ul>
+              <li class="g-main">
+                <a href="http://127.0.0.1:5501/index/HTML/find.html">검색</a>
+              </li>
+              <li class="g-main">
+                <a href="http://127.0.0.1:5501/index/HTML/membership.html"
+                  >멤버십</a
+                >
+              </li>
+              <li class="g-main">
+                <a href="#" class="logOut">로그아웃</a>
+              </li>
+            </ul>
+          </nav>
+          <nav id="lnb">
+            <ul>
+              <li class="l-main">
+                <a href="http://127.0.0.1:5501/index/HTML/main.html">홈</a>
+              </li>
+              <li class="l-main">
+                <a href="#">카테고리</a>
+              </li>
+              <li class="l-main">
+                <a href="http://127.0.0.1:5501/index/HTML/myPage.html">MY</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- <form action="..."> -->
+    <!-- 네비게이션 -->
+    <!-- 이미지 모달 -->
+    <div class="modal-img-back">
+      <div class="modal-img-win">
+        <!-- <img src="../../resources/image/스포츠/spo1.jpg" alt=""> -->
+      </div>
+    </div>
+    <!-- 장르 모달 -->
+    <div class="modal-kate-back">
+      <div class="modal-win">
+        <div class="modal-kate-header-container">
+          <div class="modal-kate-header">
+            <p>카테고리</p>
+          </div>
+          <div class="modal-kate-header">
+            <button type="button" class="modal-kate-close">X</button>
+          </div>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <label for="hor">
+              <li class="modal-kate">
+                공포
+                <input type="checkbox" id="hor" checked />
+              </li>
+            </label>
+            <label for="spo">
+              <li class="modal-kate">
+                스포츠
+                <input type="checkbox" id="spo" checked />
+              </li>
+            </label>
+            <label for="cri-and-act">
+              <li class="modal-kate">
+                액션·범죄
+                <input type="checkbox" id="cri-and-act" checked />
+              </li>
+            </label>
+            <label for="medy">
+              <li class="modal-kate">
+                코메디
+                <input type="checkbox" id="medy" checked />
+              </li>
+            </label>
+            <!-- <label for="war">
+              <li class="modal-kate">
+                전쟁
+                <input type="checkbox" id="war" checked />
+              </li>
+            </label> -->
+            <!-- <label for="sf">
+              <li class="modal-kate">
+                공상과학
+                <input type="checkbox" id="sf" checked />
+              </li>
+            </label> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="kate-container">
+      <div class="kate-box">
+        <div class="kate-header">카테고리</div>
+        <button type="button" id="modal-kate-open">장르선택</button>
+      </div>
+    </div>
+    <div class="movie-container"></div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.6.4.js"
+    integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+    crossorigin="anonymous"
+  ></script>
+  <script src="../JS/katejQuery.js"></script>
+  <script src="../JS/Login.js"></script>
+  <script src="../JS/modalvideo.js"></script>
+  <script src="../JS/logout.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const header = document.querySelector("header");
+      const scrollOffset = 10; // Adjust this value based on when you want the color change to occur
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > scrollOffset) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    });
+  </script>
+  <!-- <script src="../JS/modal.js"></script> -->
+  <!-- <script src="../JS/modaltest.js"></script> -->
+</html>

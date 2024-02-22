@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  /* background-color: #f3f3f3; */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.container {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h2 {
+  padding: 3rem;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.find-container,
+.find-pw-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  border: 2px solid dodgerblue;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid skyblue;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  background-color: rgba(30, 144, 255, 0.5);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: dodgerblue;
+}
+
+.wrap {
+  width: 70px;
+  margin-bottom: 1rem;
+  text-align: start;
+}
+
+.hidden-text {
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 24px;
+  display: none;
+}
+
+.find-text button {
+  width: 40px;
+  height: 40px;
+}
+
+.find-pw-container {
+  margin-top: 1rem;
+  opacity: 0;
+  /* display: none; */
+  transition: all 0.5s ease;
+}
+
+.find-pw-container.selected {
+  opacity: 1;
+  /* display: block; */
+}

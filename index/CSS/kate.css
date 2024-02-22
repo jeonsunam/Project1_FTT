@@ -1,0 +1,161 @@
+body {
+  background-color: #333;
+}
+
+/* 모달창 시작 */
+.modal-kate-back {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+#modal-kate-open {
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  border-color: #333;
+  background-color: #ddd;
+  color: #333;
+}
+#modal-kate-open:hover {
+  background-color: #333;
+  color: #ddd;
+}
+.movie {
+  background-color: black;
+}
+.modal-win {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 5px 5px 8px rgba(255, 255, 255, 0.8),
+    -5px -5px 8px rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  width: calc(100%-20px);
+  max-width: 1500px;
+  height: 500px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.modal-kate-header-container {
+  background-color: red;
+  height: 20%;
+  border-bottom: 2px solid #333;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-kate-header {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 0 20px;
+}
+.modal-kate-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
+  font-size: 20px;
+  font-weight: bold;
+}
+.modal-body {
+  height: 80%;
+}
+.modal-body ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: #333;
+  height: 100%;
+  padding: 50px;
+  gap: 10px;
+}
+label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.modal-kate {
+  list-style: none;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid #333;
+  width: 100%;
+  height: 100px;
+  border-radius: 1rem;
+}
+.save-btn {
+  width: 100px;
+  height: 30px;
+  position: absolute;
+  bottom: 15px;
+  right: 50px;
+}
+/* 모달 창 종료 */
+
+/* 카테고리 시작 */
+.kate-container {
+  position: fixed;
+  top: 114px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #555;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+.kate-header {
+  font-size: 48px;
+}
+.kate-box {
+  margin: 0 auto;
+  width: 1240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.kate-box ul {
+  display: flex;
+  gap: 10px;
+}
+.kate-box ul li {
+  width: 100px;
+  height: 30px;
+}
+/* 이미지 */
+.movie-container {
+  margin: 222px auto 0;
+  width: 1240px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.movie {
+  /* margin-left: 10px; */
+}
+.movie:first-child {
+  margin-left: 0;
+}
+img {
+  width: 240px;
+  height: 360px;
+}
+
+.goodMovie {
+  color: red;
+  cursor: pointer;
+}

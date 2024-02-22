@@ -1,0 +1,182 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+} */
+
+.buyPopup-header {
+  background-color: #001f3f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  color: #d3d3d3;
+  font-size: 44px;
+  font-weight: 700;
+}
+/* 결제내용 */
+.buyPopup-body {
+  background-color: #333;
+  height: 100%;
+}
+.buyPopup-container {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  color: white;
+  gap: 8px;
+}
+.container-text {
+  font-size: 24px;
+  /* margin-left: 16px; */
+}
+.buyPopup-container .buyPopup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* padding: 16px; */
+  font-size: 16px;
+}
+
+.buyPopup-content table th {
+  width: 150px;
+  text-align: left;
+}
+
+.two-table th {
+  width: 100px;
+}
+
+.two-table td {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 32px;
+  font-weight: bold;
+}
+/* 결제수단 */
+.tab {
+  padding: 24px;
+}
+.buyPopup-pri {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.fast-pri {
+  background-color: #777;
+  /* border-radius: 16px; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 24px;
+  gap: 24px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.tab-item1 {
+  border: 2px solid #777;
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.plus {
+  font-size: 40px;
+}
+.tab-item1 .card {
+  border: 2px dashed #333;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.tab-item2 {
+  border: 2px solid #777;
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+.card {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.card.general:hover {
+  background-color: #777;
+  cursor: pointer;
+}
+
+.card.general.selected {
+  background-color: #ace;
+}
+.show2 {
+  display: none;
+}
+input[type="checkbox"] {
+  /* 원래 크기에서 2배로 키우기 */
+  transform: scale(2);
+  /* 또는 직접 너비와 높이 지정 */
+  /* width: 40px;
+height: 40px; */
+}
+.pri-agree {
+  padding: 0 32px;
+}
+
+.pri-agree span {
+  padding: 0 32px;
+}
+
+.agree-check {
+  /* background-color: #333; */
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  gap: 1em;
+  padding: 1rem 0;
+  margin-left: 50px;
+  color: white;
+}
+
+.stg {
+  color: red;
+  margin-right: 1rem;
+  font-weight: 700;
+}
+
+.agree-check > input {
+  width: 15px;
+}
+
+.payBtnContainer {
+  display: flex;
+  justify-content: center;
+}
+.payBtn {
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #3498db;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.5rem;
+}

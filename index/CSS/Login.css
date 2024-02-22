@@ -1,0 +1,374 @@
+/* body {
+  background-color: #d9d9d9;
+} */
+
+h2 {
+  font-size: 16px;
+  padding-bottom: 8px;
+}
+
+.sign.phone > h2 {
+  padding-bottom: 0;
+}
+input {
+  border: 1px solid skyblue;
+  padding: 8px;
+  width: 100%;
+  height: 40px;
+}
+
+.sign.gender > .gender > input {
+  padding: 0;
+}
+
+/* 로그인 CSS 시작 */
+/* 입력창 클릭 시 */
+input:focus {
+  outline: none;
+}
+
+/* 전체화면 */
+.modal-back {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+/* 로그인 버튼 클릭 시 */
+.modal-back.selected {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 로그인 버튼 클릭 전 모달창 */
+.modal-page {
+  background: #ffffff;
+  width: 600px;
+  height: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* opacity: 0; */
+  border-radius: 1rem;
+}
+
+/* 로그인 버튼 클릭 후 모달창 */
+.modal-page.selected {
+  opacity: 1;
+  transition: all 1s ease;
+}
+
+/* X버튼 클릭 */
+.close-box {
+  margin: 0rem auto;
+  width: 100%;
+  /* max-width: 400px; */
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  /* border: 1px solid black; */
+}
+.modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  /* padding: 1rem; */
+  cursor: pointer;
+  /* border: 1px solid black; */
+  font-size: 40px;
+  /* font-weight: bold; */
+  border-radius: 20%;
+}
+
+/* 로그인 문구 */
+.modal-header {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* 환영 문구 */
+#come {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 2rem;
+}
+
+/* 아이디 비밀번호창 */
+table {
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 400px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* margin-bottom: 50px; */
+  height: 20%;
+}
+
+/* 선 추가 */
+.sign.id > .wrap > input::placeholder {
+  font-size: 12px;
+}
+.sign.pw > input::placeholder {
+  font-size: 12px;
+}
+::placeholder {
+  font-size: 16px;
+}
+/* table th {
+  border-right: 2px solid black;
+  border-radius: 1rem;
+} */
+table tr {
+  /* border: 1px solid black; */
+  border-bottom: 1px solid black;
+  /* border-radius: 1rem; */
+}
+
+/* 가운데 정렬, 거리조절? */
+table th,
+table td {
+  padding: 1rem 8px;
+  text-align: center;
+}
+
+.table th.click,
+table td.click {
+  /* box-shadow: 0 0 10px dodgerblue; */
+  border: 1px solid dodgerblue;
+  border-radius: 16px;
+}
+
+/* 입력창(input) */
+table input {
+  border: 0;
+  width: 100%;
+  height: 30px;
+  /* border: 1px solid black; */
+}
+
+/* 아이디 찾기 부분 */
+.modal-find {
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+/* a태그 */
+.modal-find a {
+  text-decoration: none;
+  color: black;
+}
+
+/* 로그인 확인 취소 버튼 부모 */
+.modal-check {
+  margin: 1rem auto;
+  /* display: flex; */
+  width: 100%;
+  max-width: 400px;
+  /* justify-content: center;
+  align-items: center; */
+  /* margin: 1rem; */
+  gap: 1rem;
+}
+
+/* 로그인 확인 취소 버튼 */
+
+.modal-check input {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  border: 0;
+  background-color: black;
+  color: white;
+  padding: 0.5rem 2rem;
+}
+
+.modal-check input:hover {
+  cursor: pointer;
+  background-color: red;
+}
+.login-go {
+  width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 이용약관 맨 아래 */
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  cursor: pointer;
+}
+
+/* 로그인 CSS 끝 */
+
+/* 회원가입 CSS */
+.wrap-container {
+  background-color: #fff;
+  border: 1px solid dodgerblue;
+  border-radius: 5px;
+  width: 100%;
+  padding: 8px 16px;
+}
+
+.wrap > #cloneCheck {
+  border: 1px solid dodgerblue;
+  background-color: dodgerblue;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.signup-header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.signup-main {
+  height: 100%;
+}
+.sign-text {
+  color: dodgerblue;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 2rem;
+}
+
+.signup {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.sign {
+  padding: 0.5rem;
+}
+
+.signup .sign .wrap {
+  display: flex;
+  gap: 1rem;
+}
+
+.signup .sign .wrap button {
+  width: 100px;
+}
+
+section > button {
+  background-color: white;
+  border: 1px solid dodgerblue;
+  color: dodgerblue;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+section > button:hover {
+  background-color: dodgerblue;
+  color: black;
+}
+.signup .sign.gender {
+  /* border: 1px solid black; */
+  /* width: 97.2%; */
+  /* background-color: white; */
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.signup .sign.gender .gender {
+  display: flex;
+  width: 100%;
+}
+
+.signup .sign.gender .gender input {
+  width: 100%;
+  height: 30px;
+  border: 1px solid skyblue;
+  background-color: white;
+}
+
+.signup .sign.gender .gender input:hover {
+  cursor: pointer;
+}
+
+.signup .sign.gender .gender input:nth-child(1) {
+  border-right: white;
+}
+
+.signup .sign.gender .gender input.selected {
+  background-color: dodgerblue;
+}
+
+.signup .signBtn {
+  position: absolute;
+  width: 100%;
+  bottom: -46px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+}
+
+.auth-tel {
+  display: flex;
+  gap: 4px;
+}
+.auth-profile {
+  background-color: #fff;
+  border: 1px solid dodgerblue;
+  border-radius: 8px;
+  margin-top: 8px;
+  padding: 8px 16px;
+}
+.auth-num {
+  border: 1px solid dodgerblue;
+  border: 0;
+  background-color: dodgerblue;
+  /* color: white; */
+  border-radius: 8px;
+  font-size: 14px;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  /* padding: 8px; */
+}
+.sign.phone {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sign select {
+  border: 1px solid skyblue;
+  padding: 8px;
+  height: 40px;
+}
+/* 인증번호 받기 칸 */
+.get-tel {
+  display: none;
+}

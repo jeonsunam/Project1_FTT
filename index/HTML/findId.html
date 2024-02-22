@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아이디 찾기</title>
+    <link rel="stylesheet" href="../CSS/findId.css" />
+    <link rel="stylesheet" href="../CSS/total.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>아이디 및 비밀번호 찾기</h2>
+      <div class="find-container">
+        <div class="wrap">
+          <label for="username">이름</label>
+        </div>
+        <input
+          type="text"
+          id="userIdName"
+          name="username"
+          placeholder="이름을 입력해주세요"
+          required
+        />
+        <div class="wrap">
+          <label for="phone">전화번호</label>
+        </div>
+        <input
+          type="text"
+          id="idPhoneNumber"
+          name="phonenumber"
+          placeholder="'-'전화번호 입력"
+          required
+        />
+
+        <button type="button" id="findIdBtn">찾기</button>
+        <button type="button" class="find-pw">비밀번호 찾기</button>
+        <a href="http://127.0.0.1:5501/index/HTML/page.html"
+          ><button type="button" class="backBtn">나가기</button></a
+        >
+        <div class="hidden-text id"></div>
+      </div>
+
+      <div class="find-pw-container">
+        <div class="wrap">
+          <label for="username">아이디</label>
+        </div>
+        <input
+          type="text"
+          id="pwUserId"
+          name="userId"
+          placeholder="아이디를 입력해주세요"
+          required
+        />
+        <div class="wrap">
+          <label for="phone">전화번호</label>
+        </div>
+        <input
+          type="text"
+          id="pwPhoneNumber"
+          name="phonenumber"
+          placeholder="'-'전화번호 입력"
+          required
+        />
+
+        <button type="button" id="findPwBtn">찾기</button>
+        <a href="http://127.0.0.1:5501/index/HTML/page.html"
+          ><button type="button" class="backBtn">나가기</button></a
+        >
+        <div class="hidden-text pw"></div>
+      </div>
+    </div>
+    <script type="module">
+      import * as firebase from "../JS/firebase.js";
+      const {
+        db,
+        getDocs,
+        collection,
+        setDoc,
+        addDoc,
+        getDatas,
+        doc,
+        addDatas,
+        deleteDatas,
+        updateDatas,
+        deleteField,
+        getData,
+        addData,
+      } = firebase;
+
+      const findIdBtn = document.querySelector("#findIdBtn");
+      const pwBtn = document.querySelector(".find-pw");
+      const textId = document.querySelector(".hidden-text.id");
+      const textPw = document.querySelector(".hidden-text.pw");
+      const pwWrap = document.querySelector(".find-pw-container");
+      const findPwBtn = document.querySelector("#findPwBtn");
+      const backBtn = document.querySelector(".backBtn");
+
+      const snapshot = await getData("FTT", "FTT1");
+      const { memberName, memberPhoneNumber, memberId, memberPassword } =
+        snapshot.data();
+
+      findIdBtn.addEventListener("click", async function () {
+        if (document.querySelector("#userIdName").value == memberName) {
+          if (
+            document.querySelector("#idPhoneNumber").value == memberPhoneNumber
+          ) {
+            textId.style.display = "block";
+            textId.innerHTML = `아이디는 ${memberId}입니다.`;
+          } else {
+            alert("일치하는 전화번호가 없습니다.");
+          }
+        } else {
+          alert("일치하는 이름이 없습니다.");
+        }
+      });
+
+      pwBtn.addEventListener("click", () => {
+        pwWrap.classList.add("selected");
+      });
+
+      findPwBtn.addEventListener("click", () => {
+        if (document.querySelector("#pwUserId").value == memberId) {
+          if (
+            document.querySelector("#pwPhoneNumber").value == memberPhoneNumber
+          ) {
+            textPw.style.display = "block";
+            textPw.innerHTML = `비밀번호는 ${memberPassword}입니다.`;
+          } else {
+            alert("일치하는 전화번호가 없습니다.");
+          }
+        } else {
+          alert("일치하는 아이디가 없습니다.");
+        }
+      });
+    </script>
+  </body>
+</html>

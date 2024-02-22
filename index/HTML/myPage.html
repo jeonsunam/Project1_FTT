@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my_page</title>
+    <link rel="stylesheet" href="../CSS/myPage.css" />
+    <link rel="stylesheet" href="../CSS/myPageModal.css" />
+    <link rel="stylesheet" href="../CSS/main-header.css" />
+    <link rel="stylesheet" href="../CSS/total.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <!-- 헤더 -->
+    <header>
+      <div class="container">
+        <h1>
+          <a href="http://127.0.0.1:5501/index/HTML/main.html"> FTT </a>
+        </h1>
+        <div id="header-menu">
+          <nav id="gnb">
+            <ul>
+              <li class="g-main">
+                <a href="http://127.0.0.1:5501/index/HTML/find.html">검색</a>
+                <!-- <ul class="g-sub">
+              <li><a class="g-sub-item" href="#">한국어</a></li>
+              <li><a class="g-sub-item" href="#">영어</a></li>
+              <li><a class="g-sub-item" href="#">일본어</a></li>
+            </ul> -->
+              </li>
+              <li class="g-main">
+                <a href="http://127.0.0.1:5501/index/HTML/membership.html"
+                  >멤버십</a
+                >
+              </li>
+              <li class="g-main">
+                <a href="#" class="logOut">로그아웃</a>
+              </li>
+            </ul>
+          </nav>
+          <nav id="lnb">
+            <ul>
+              <li class="l-main">
+                <a href="http://127.0.0.1:5501/index/HTML/main.html">홈</a>
+              </li>
+              <li class="l-main">
+                <a href="http://127.0.0.1:5501/index/HTML/Kate.html"
+                  >카테고리</a
+                >
+              </li>
+              <li class="l-main">
+                <a href="#">MY</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- 헤더끝 -->
+
+    <!-- 모달창 시작 -->
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <section class="modal-text"></section>
+        <!-- <h1 class="popup-title">알림함 팝업</h1> -->
+        <button class="popup-close ir">X</button>
+        <div class="alarm-modal-container">
+          <div slot="pop-body">
+            <div class="my-pop-alert">
+              <div class="my-pop-alert-top">
+                <span>알림함</span>
+                <button type="button" class="my-pop-alert-top-btn">
+                  <i class="fa-regular fa-bell"></i>
+                  <span>알림설정</span>
+                </button>
+              </div>
+              <ul class="my-pop-setting-list">
+                <li>
+                  <span class="alert-setting-tit">시청 예약 알림</span>
+                  <div class="radio-style">
+                    <span>
+                      <input
+                        type="radio"
+                        id="ch-re-on"
+                        value="y"
+                        name="ch-re"
+                        class="radio-purple"
+                      />
+                      <label for="ch-re-on"> ON </label>
+                    </span>
+                    <span>
+                      <input
+                        type="radio"
+                        id="ch-re-off"
+                        value="n"
+                        name="ch-re"
+                        class="radio-purple"
+                      />
+                      <label for="ch-re-off"> OFF </label>
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <span class="alert-setting-tit"
+                    >관심 프로그램 업로드 알림</span
+                  >
+                  <div class="radio-style">
+                    <span>
+                      <input
+                        type="radio"
+                        id="ch-up-on"
+                        value="y"
+                        name="ch-up"
+                        class="radio-purple"
+                      />
+                      <label for="ch-up-on"> ON </label>
+                    </span>
+                    <span>
+                      <input
+                        type="radio"
+                        id="ch-up-off"
+                        value="n"
+                        name="ch-up"
+                        class="radio-purple"
+                      />
+                      <label for="ch-up-off"> OFF </label>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+              <div class="my-pop-alert-empty">
+                <i class="fa-solid fa-circle-exclamation">
+                  <p>알림 내역이 없어요</p>
+                </i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 모달창 종료 -->
+    <div class="mymain-container">
+      <div class="svg">
+        <div class="alarmcontainer">
+          <i class="fa-regular fa-bell alarm" id="alarmId"></i>
+          <div>알림</div>
+        </div>
+        <div class="ticketcontainer">
+          <div class="ticket">
+            <i class="fa-solid fa-ticket"></i>
+            <a href="http://127.0.0.1:5501/index/HTML/myPageMbs.html">이용권</a>
+          </div>
+        </div>
+        <div class="setting">
+          <i class="fa-solid fa-gear option"> 설정 </i>
+          <span class="setting-info set">회원정보 수정</span>
+          <span class="setting-del set">회원 탈퇴</span>
+        </div>
+      </div>
+      <div class="profileBox">
+        <div class="profile-img">
+          <img src="../../resources/mypageImg/1.jpg" alt="" class="profile" />
+        </div>
+        <div class="profile-text">
+          <span class="profile-name"></span>
+        </div>
+      </div>
+      <div class="profile-information">
+        <span class="profile-ticket">나의 이용권 : </span>
+        <span class="profile-ticket2"></span>
+      </div>
+      <div class="film">
+        <i class="fa-solid fa-film filmIcon"></i>
+        전체 신청내역
+      </div>
+      <!-- <div class="bigBox1">
+        <div class="smallBox">
+          <div>
+            <img src="../../resources/mypageImg/가문의영광.jpg" class="img" />
+          </div>
+          <p>가문의 영광</p>
+          <div class="time">60분 남음</div>
+        </div>
+        <div class="smallBox">
+          <div>
+            <img src="../../resources/mypageImg/옥수역 귀신.jpg" class="img" />
+          </div>
+          <p>옥수역 귀신</p>
+          <div class="time">50분 남음</div>
+        </div>
+        <div class="smallBox">
+          <div>
+            <img src="../../resources/mypageImg/리바운드.jpg" class="img" />
+          </div>
+          <p>리바운드</p>
+          <div class="time">40분 남음</div>
+        </div>
+      </div> -->
+      <div class="move-name">
+        <i class="fa-regular fa-heart"></i>
+        관심 영화
+      </div>
+      <!-- <div class="move-name1">
+        <div class="image-item">
+          <div>
+            <img src="../../resources/mypageImg/회사원.jpg" class="img" />
+          </div>
+          <p>회사원</p>
+        </div>
+        <div class="image-item2">
+          <div>
+            <img src="../../resources/mypageImg/인턴.jpg" class="img" />
+          </div>
+          <p>인턴</p>
+        </div>
+        <div class="image-item3">
+          <div>
+            <img
+              src="../../resources/mypageImg/열정같은소리하고있네.jpg"
+              class="img"
+            />
+          </div>
+          <p>열정같은소리하고있네</p>
+        </div>
+        <div>
+          <img
+            src="../../resources/mypageImg/잠깐만 회사 좀 관두고 올게.jpg"
+            alt=""
+          />
+          <p>잠깐만 회사 좀 관두고 올게</p>
+        </div>
+      </div> -->
+      <div class="moving">
+        <i class="fa-solid fa-heart"></i>
+        찜한 영화
+      </div>
+      <!-- <div class="moving-item">
+        <div class="moving-img">
+          <div>
+            <img src="../../resources/mypageImg/부라더.jpg" class="img" />
+          </div>
+          <p>부라더</p>
+        </div>
+        <div class="moving-img2">
+          <div>
+            <img src="../../resources/mypageImg/영웅.jpg" class="img" />
+          </div>
+          <p>영웅</p>
+        </div>
+        <div class="moving-img3">
+          <div>
+            <img src="../../resources/mypageImg/웅남이.jpg" class="img" />
+          </div>
+          <p>웅남이</p>
+        </div>
+        <div class="moving-img4">
+          <div>
+            <img src="../../resources/mypageImg/범죄도시.jpg" class="img" />
+          </div>
+          <p>범죄도시</p>
+        </div>
+        <div class="moving-img5">
+          <img
+            src="../../resources/mypageImg/악마는 프라다를 입는다.jpg"
+            class="img"
+          />
+          <p>악마는 프라다를 입는다</p>
+        </div>
+      </div> -->
+      <div class="person">
+        <i class="fa-solid fa-person"></i>
+        인생영화
+      </div>
+      <!-- <div class="life-item">
+        <div class="life-move">
+          <div>
+            <img src="../../resources/mypageImg/어바웃 타임.jpg" class="img" />
+          </div>
+          <p>어바웃 타임</p>
+        </div>
+        <div class="life-move2">
+          <div>
+            <img
+              src="../../resources/mypageImg/우리 생애 최고의 순간.jpg"
+              class="img"
+            />
+          </div>
+          <p>우리 생에 최고의 순간</p>
+        </div>
+        <div class="life-move3-">
+          <div>
+            <img
+              src="../../resources/mypageImg/지금 만나러 갑니다.jpg"
+              class="img"
+            />
+          </div>
+          <p>지금 만나러 갑니다</p>
+        </div>
+        <div class="life-move4">
+          <div>
+            <img
+              src="../../resources/mypageImg/당신 거기 있어줄래요.jpg"
+              class="img"
+            />
+          </div>
+          <p>당신 거기 있어줄래요</p>
+        </div>
+        <div class="life-move5">
+          <div>
+            <img
+              src="../../resources/mypageImg/리틀 포레스트.jpg"
+              class="img"
+            />
+          </div>
+          <p>리틀 포레스트</p>
+        </div>
+        <div class="life-move6">
+          <div>
+            <img src="../../resources/mypageImg/비긴 어게인.jpg" class="img" />
+          </div>
+          <p>비긴 어게인</p>
+        </div>
+      </div> -->
+    </div>
+    <!-- footer -->
+    <footer>
+      <div class="footer-fot">
+        <div class="fot-content">
+          <div class="fot-content-main">
+            <!-- <p>
+              <span>자주 묻는 질문 </span><span>고객센터</span>
+              <span>계정</span>
+              <span>미디어 센터</span>
+            </p>
+            <p>
+              <span>투자 정보 </span><span>입사 정보</span>
+              <span>FTT 지원 디바이스</span>
+              <span>이용 약관</span>
+            </p>
+            <p>
+              <span>개인정보 처리방침 </span><span>쿠키 설정</span>
+              <span>회사 정보</span>
+              <span>문의하기</span>
+            </p>
+            <p>
+              <span>속도 테스트 </span><span>법적 고지</span>
+              <span>FTT</span>
+            </p> -->
+            <ul class="qes">
+              <li>
+                질문이 있으신가요? 문의 전화: 00-123-456-7890
+                <ul>
+                  <li>자주 묻는 질문</li>
+                  <li>투자 정보</li>
+                  <li>개인정보 처리방침</li>
+                  <li>속도 테스트</li>
+                </ul>
+                <ul>
+                  <li>고객 센터</li>
+                  <li>입사 정보</li>
+                  <li>쿠키 설정</li>
+                  <li>법적 고지</li>
+                </ul>
+                <ul>
+                  <li>계정</li>
+                  <li>FTT 지원 디바이스</li>
+                  <li>회사 정보</li>
+                  <li>FTT</li>
+                </ul>
+                <ul>
+                  <li>미디어 센터</li>
+                  <li>이용 약관</li>
+                  <li>문의하기</li>
+                  <li></li>
+                </ul>
+              </li>
+            </ul>
+            <ul>
+              FTT 대한민국
+              <li>
+                FTT서비시스코리아 유한회사 통신판매업신고번호: 제2023-대전광역시
+                선화동- DW아카데미 전화번호: 00-12-123-1324 (수신자 부담) 대표:
+                홍길동 이메일 주소: korea@FTT.com 주소: 대한민국 대전광역시 중구
+                선화동 사업자등록번호: 123-54-678900
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer -->
+  </body>
+  <script src="/index/JS/myPage.js"></script>
+  <script src="../JS/logout.js"></script>
+  <!-- <script src="../JS/buy.js"></script> -->
+  <!-- <script src="../"></script> -->
+
+  <script type="module">
+    import * as firebase from "../JS/firebase.js";
+    const {
+      db,
+      getDocs,
+      collection,
+      setDoc,
+      addDoc,
+      getDatas,
+      doc,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      deleteField,
+      getData,
+      addData,
+    } = firebase;
+
+    const userName = document.querySelector(".profile-name");
+    const mbsName = document.querySelector(".profile-ticket2");
+
+    async function pushName() {
+      const snapshot = await getData("FTT", "FTT1");
+      const { memberName } = snapshot.data();
+
+      if (memberName) {
+        userName.insertAdjacentHTML(
+          "beforebegin",
+          `
+        <span style="color:white; font-size:24px;">${memberName}님</span>
+        `
+        );
+      } else {
+        userName.insertAdjacentHTML(
+          "beforebegin",
+          `
+        <span style="color:white; font-size:24px;">${""}</span>
+        `
+        );
+      }
+    }
+
+    async function payName() {
+      const snapshot = await getData("FTT", "payInfo");
+      const { payName } = snapshot.data();
+      if (payName) {
+        mbsName.insertAdjacentHTML(
+          "beforebegin",
+          `
+        <span style="color:white; font-size:24px;">${payName}</span>
+        `
+        );
+      } else {
+        mbsName.insertAdjacentHTML(
+          "beforebegin",
+          `
+        <span style="color:white; font-size:24px;">${""}</span>
+        `
+        );
+      }
+    }
+    pushName();
+    payName();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const header = document.querySelector("header");
+      const scrollOffset = 10; // Adjust this value based on when you want the color change to occur
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > scrollOffset) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    });
+
+    const memberInfo = {
+      memberId: "",
+      memberPassword: "",
+      memberName: "",
+      memberBirth: "",
+      memberPhoneNumber: "",
+      membergender: "",
+      memberLanguage: "",
+    };
+
+    const pay = {
+      payName: "",
+      payQuality: "",
+      payUse: "",
+      payWaych: "",
+      pay: "",
+      payMoney: "",
+    };
+    delBtn.addEventListener("click", function () {
+      const out = confirm("계정을 탈퇴하시겠습니까?");
+      if (out == true) {
+        addData(pay);
+        addDatas(memberInfo);
+
+        alert("탈퇴되었습니다. 안녕히 가세요.");
+        location.href = "http://127.0.0.1:5501/index/HTML/page.html";
+      } else {
+        alert("감사합니다.");
+      }
+    });
+  </script>
+</html>

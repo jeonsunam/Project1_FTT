@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BUY</title>
+    <link rel="stylesheet" href="../CSS/buy.css" />
+    <link rel="stylesheet" href="../CSS/total.css" />
+  </head>
+  <script
+    src="https://kit.fontawesome.com/1edf72a888.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <body>
+    <!-- 헤더 -->
+
+    <div class="buyPopup-body">
+      <div class="buyPopup-header">FTT 상품 구매</div>
+      <div class="buyPopup-container">
+        <div class="container-text">결제내용</div>
+        <hr />
+
+        <div class="buyPopup-content">
+          <p><h1 id="payName">Basic</h1></p>
+          <p id="payQuality">화질 : HD화질</p>
+          <p id="payUse">모바일/태블릿/PC</p>
+          <p id="payWatch">1회선</p>
+          <table>
+            <th>이용기간</th>
+            <td><span id="date"></span>~<span id="dateAdd"></span>(1개월)</td>
+          </table>
+          <table class="two-table">
+            <tr>
+              <th id="pay">금액</th>
+              <td id="payMoney">4,000</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- 결제 내용 -->
+      <div class="tab">
+        <div class="buyPopup-pri">
+          <label for="past">
+            <div class="container-text selected">결제수단 선택</div>
+            <div class="fast-pri">
+              <input type="radio" id="past" name="price" checked />빠른결제
+            </div>
+          </label>
+        </div>
+        <div class="show1">
+          <div class="tab-item1">
+            <i class="fa-solid fa-circle-plus plus"></i>
+            <div class="card">카드 등록</div>
+          </div>
+        </div>
+        <div class="buyPopup-pri">
+          <label for="notPast">
+            <div class="container-text">결제수단 선택</div>
+            <div class="fast-pri">
+              <input type="radio" id="notPast" name="price" />일반결제
+            </div>
+          </label>
+        </div>
+        <div class="show2">
+          <div class="tab-item2">
+            <div class="card general">
+              <i class="fa-regular fa-credit-card"></i>신용카드
+            </div>
+            <div class="card general">
+              <i class="fa-solid fa-mobile"></i>휴대폰
+            </div>
+            <div class="card general">
+              <iconify-icon icon="simple-icons:naver"></iconify-icon>네이버페이
+            </div>
+            <div class="card general">
+              <iconify-icon icon="mynaui:message"></iconify-icon>카카오페이
+            </div>
+            <div class="card general">토스</div>
+          </div>
+        </div>
+      </div>
+      <!-- 결제 수단 -->
+      <div class="agree-container">
+        <div class="agree-check">
+          <input type="checkbox" name="check-all" />
+          <span>전체동의하기</span>
+        </div>
+        <div class="agree-check">
+          <input type="checkbox" name="check" />
+          <span><span class="stg">[필수]</span>FTT 이용약관</span>
+        </div>
+        <div class="agree-check">
+          <input type="checkbox" name="check" />
+          <span><span class="stg">[필수]</span>개인정보 수집 및 이용</span>
+        </div>
+      </div>
+      <div class="payBtnContainer">
+        <button type="button" name="결제" value="button" class="payBtn">
+          결제하기
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="../JS/buy.js"></script>
+  <script src="../JS/buyAgree.js"></script>
+  <script type="module">
+    import * as firebase from "../JS/firebase.js";
+    const {
+      db,
+      getDocs,
+      collection,
+      setDoc,
+      addDoc,
+      getDatas,
+      doc,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      deleteField,
+      getData,
+      addData,
+    } = firebase;
+
+    // async function pushPay() {
+
+    // 버튼 클릭 시 동작
+    btn.addEventListener("click", async function () {
+      const pay = {
+        payName: document.querySelector("#payName").innerText,
+        payQuality: document.querySelector("#payQuality").innerText,
+        payUse: document.querySelector("#payUse").innerText,
+        payWaych: document.querySelector("#payWatch").innerText,
+        pay: document.querySelector("#pay").innerText,
+        payMoney: document.querySelector("#payMoney").innerText,
+      };
+
+      if (document.querySelector(".card.selected")) {
+        // 선택된 카드가 있을 때의 동작
+        if (checkAll.checked) {
+          addData(pay).then(function () {
+            alert("감사합니다.");
+            window.opener.location.href =
+              "http://127.0.0.1:5501/index/HTML/main.html";
+            window.close();
+          });
+        } else {
+          alert("필수 항목을 체크해주세요");
+        }
+      } else {
+        // 카드가 선택되지 않았을 때의 동작
+
+        alert("결제 수단을 선택하세요");
+      }
+    });
+  </script>
+</html>

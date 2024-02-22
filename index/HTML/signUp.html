@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/signUp.css" />
+    <link rel="stylesheet" href="../CSS/total.css" />
+  </head>
+
+  <body>
+    <!-- 회원가입 시작 -->
+    <div class="signup-main">
+      <!-- <div class="signup-header">navBar</div> -->
+      <div class="signup-header">
+        <div class="sign-text">FTT 회원가입</div>
+      </div>
+
+      <section class="signup">
+        <div class="signup-wrap">
+          <div class="wrap-container">
+            <div class="sign id">
+              <h2>아이디</h2>
+              <div class="wrap">
+                <input
+                  type="text"
+                  id="signId"
+                  name="id"
+                  placeholder="4자 이상 입력"
+                />
+                <button type="button" id="cloneCheck" name="중복확인">
+                  중복확인
+                </button>
+              </div>
+            </div>
+
+            <div class="sign pw">
+              <h2>비밀번호</h2>
+              <input
+                type="password"
+                name="password"
+                id="signPassword"
+                placeholder="8자 이상 입력 특수문자 포함"
+              />
+            </div>
+
+            <div class="sign rec">
+              <h2>비밀번호 재입력</h2>
+              <input type="password" id="signPwCheck" name="passwordCheck" />
+              <div id="newCheck"></div>
+            </div>
+          </div>
+          <!-- 인증시작-->
+          <div class="auth-profile">
+            <div class="sign name">
+              <h2>이름</h2>
+              <input type="text" name="name" />
+            </div>
+
+            <div class="sign birth">
+              <h2>생년월일</h2>
+              <input
+                type="text"
+                name="birth"
+                placeholder=" yyyy-mm-dd로 입력해주세요"
+              />
+            </div>
+
+            <div class="sign gender">
+              <div class="gender">
+                <input
+                  type="button"
+                  class="getVal1"
+                  name="gender"
+                  value="남자"
+                />
+                <input
+                  type="button"
+                  class="getVal1"
+                  name="gender"
+                  value="여자"
+                />
+              </div>
+              <div class="gender">
+                <input
+                  type="button"
+                  class="getVal2"
+                  name="language"
+                  value="내국인"
+                />
+                <input
+                  type="button"
+                  class="getVal2"
+                  name="language"
+                  value="외국인"
+                />
+              </div>
+            </div>
+
+            <div class="sign phone">
+              <h2>휴대전화</h2>
+              <select>
+                <option>SKT</option>
+                <option>KT</option>
+                <option>LG</option>
+              </select>
+              <div class="auth-tel">
+                <input type="text" name="phone" placeholder="'-'입력해주세요" />
+                <button
+                  type="button"
+                  name="btn"
+                  value="인증번호 받기"
+                  class="auth-num"
+                >
+                  인증번호 받기
+                </button>
+              </div>
+              <div class="get-tel">
+                <input type="text" id="getNumber" />
+              </div>
+            </div>
+          </div>
+          <!-- 인증 -->
+        </div>
+        <button
+          type="button"
+          class="signBtn"
+          id="click"
+          name="btn"
+          value="button"
+        >
+          회원가입
+        </button>
+      </section>
+    </div>
+    <!-- 회원가입 끝 -->
+
+    <!-- 로그인 모달창 시작  -->
+    <div class="modal-back">
+      <div class="modal-page">
+        <!-- legend 블럭요소 -->
+        <div class="close-box">
+          <div class="modal-close">
+            <!-- <iconify-icon
+              class="icon"
+              icon="icon-park-solid:big-x"
+            ></iconify-icon> -->X
+          </div>
+        </div>
+        <div class="modal-header">로그인</div>
+        <p id="come">FTT에 오신것을 환영합니다.</p>
+        <table>
+          <tr>
+            <!-- <th>아이디</th> -->
+            <td>
+              <input
+                class="click"
+                type="text"
+                id="loginId"
+                name="id"
+                placeholder="아이디: 10글자 이내"
+              />
+            </td>
+            <!-- <td><input type="button" value="중복 확인" /></td> -->
+          </tr>
+          <tr>
+            <!-- <th>비밀번호</th> -->
+            <td>
+              <input
+                type="password"
+                name="password"
+                id="loginPw"
+                placeholder="비밀번호: 영문,숫자,특수문자 포함 8자 이상"
+              />
+            </td>
+          </tr>
+        </table>
+        <div class="modal-check">
+          <input type="button" name="check" value="확인" class="login-go" />
+          <!-- <input type="button" name="cancel" value="취소" /> -->
+        </div>
+        <div class="modal-find">
+          <a href="http://127.0.0.1:5501/index/HTML/findId.html">아이디 찾기</a>
+          <a href="http://127.0.0.1:5501/index/HTML/findId.html"
+            >비밀번호 찾기</a
+          >
+          <a href="signUp.html">회원가입</a>
+        </div>
+        <ul class="modal-footer">
+          <li>이용약관</li>
+          <li>개인정보처리방침</li>
+          <li>고객센터</li>
+        </ul>
+      </div>
+    </div>
+    <!-- 로그인 모달창 끝 -->
+  </body>
+  <script src="../JS/signUp.js"></script>
+  <!-- <script src="../JS/Login.js"></script> -->
+  <script type="module">
+    import * as firebase from "../JS/firebase.js";
+    const {
+      db,
+      getDocs,
+      collection,
+      setDoc,
+      addDoc,
+      getDatas,
+      doc,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      deleteField,
+      getData,
+      addData,
+    } = firebase;
+
+    const modalClose = document.querySelector(".modal-close");
+    const modalBack = document.querySelector(".modal-back");
+    const btn = document.querySelector(".signBtn");
+    const cloneCheckBtn = document.querySelector("#cloneCheck");
+    const signId = document.querySelector("#signId");
+    const signPw = document.querySelector("#signPassword").value;
+    const signPwCheck = document.querySelector("#signPwCheck").value;
+    const checkBtn = document.querySelector(".login-go");
+
+    // 중복확인 버튼
+    cloneCheckBtn.addEventListener("click", async function () {
+      const snapshot = await getData("FTT", "FTT1");
+      const { memberId, memberPassword } = snapshot.data();
+
+      if (idRegex.test(document.querySelector("#signId").value)) {
+        if (document.querySelector("#signId").value === memberId) {
+          alert("이미 있는 아이디입니다.");
+        } else {
+          alert("사용 가능한 아이디 입니다.");
+        }
+      } else {
+        alert("유효하지 않은 아이디입니다.");
+      }
+    });
+
+    // 회원가입
+    btn.addEventListener("click", function () {
+      const memberInfo = {
+        memberId: document.querySelector("#signId").value,
+        memberPassword: document.querySelector("#signPassword").value,
+        memberName: document.querySelector("input[name = name]").value,
+        memberBirth: document.querySelector("input[name = birth]").value,
+        memberPhoneNumber: document.querySelector("input[name = phone]").value,
+        membergender: clickGender,
+        memberLanguage: clickLanguage,
+      };
+
+      // 아이디 정규식
+      if (idRegex.test(document.querySelector("#signId").value)) {
+        // 비밀번호 정규식
+        if (pwRegex.test(document.querySelector("#signPassword").value)) {
+          // 이름 정규식
+          if (
+            nameRegex.test(document.querySelector("input[name = name]").value)
+          ) {
+            // 전화번호 정규식
+            if (
+              phoneRegex.test(
+                document.querySelector("input[name = phone]").value
+              )
+            ) {
+              // 생일 정규식
+              if (
+                birthRegex.test(
+                  document.querySelector("input[name = birth]").value
+                )
+              ) {
+                // 인증번호 정규식
+                if (
+                  getNumberRegex.test(
+                    document.querySelector("#getNumber").value
+                  )
+                ) {
+                  if (
+                    document.querySelector("#signPassword").value ==
+                    document.querySelector("#signPwCheck").value
+                  ) {
+                    addDatas(memberInfo).then(function () {
+                      alert("회원가입이 성공했습니다 로그인 해주세요");
+                      modalBack.style.display = "block";
+                    });
+                  } else {
+                    alert("입력하신 비밀번호가 다릅니다 다시 입력해주세요.");
+                  }
+                } else {
+                  alert("인증번호를 입력해주세요.");
+                }
+              } else {
+                alert("알맞은 생년월일을 입력해주세요.");
+              }
+            } else {
+              alert("알맞은 휴대폰 번호를 입력해주세요.");
+            }
+          } else {
+            alert("알맞은 이름을 입력해주세요.");
+          }
+        }
+        // 비밀번호 입력끝
+        else {
+          alert("알맞은 비밀번호를 다시 입력해주세요.");
+        }
+      } else {
+        alert("알맞은 아이디를 다시 입력해주세요");
+      }
+    });
+
+    // 로그인
+    checkBtn.addEventListener("click", async function () {
+      const snapshot = await getData("FTT", "FTT1");
+      const { memberId, memberPassword } = snapshot.data();
+
+      if (document.querySelector("#loginId").value == memberId) {
+        console.log("1");
+        if (document.querySelector("#loginPw").value == memberPassword) {
+          console.log("2");
+          location.href = "http://127.0.0.1:5501/index/HTML/main.html";
+        } else {
+          alert("비밀번호를 다시 입력해주세요");
+          console.log("3");
+        }
+      } else {
+        alert("아이디 및 비밀번호를 다시입력해주세요.");
+      }
+    });
+
+    // 로그인창 닫기
+    modalClose.addEventListener("click", function () {
+      modalBack.style.display = "none";
+    });
+  </script>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/index/CSS/find.css" />
+    <link rel="stylesheet" href="../CSS/modal.css" />
+    <link rel="stylesheet" href="/index/CSS/main-header.css" />
+    <link rel="stylesheet" href="../CSS/findVID.css">
+  </head>
+
+  <body>
+    <!-- 헤더 시작 -->
+
+    <header>
+      <div class="container">
+        <h1>
+          <a href="#"> FTT </a>
+        </h1>
+        <div id="header-menu">
+          <nav id="gnb">
+            <ul>
+              <li class="g-main">
+                <a href="#">검색</a>
+                <!-- <ul class="g-sub">
+                  <li><a class="g-sub-item" href="#">한국어</a></li>
+                  <li><a class="g-sub-item" href="#">영어</a></li>
+                  <li><a class="g-sub-item" href="#">일본어</a></li>
+                </ul> -->
+              </li>
+              <li class="g-main">
+                <a href="http://127.0.0.1:5501/index/HTML/membership.html"
+                  >멤버십</a
+                >
+              </li>
+              <li class="g-main">
+                <a href="#" class="logOut">로그아웃</a>
+              </li>
+            </ul>
+          </nav>
+          <nav id="lnb">
+            <ul>
+              <li class="l-main">
+                <a href="http://127.0.0.1:5501/index/HTML/main.html">홈</a>
+              </li>
+              <li class="l-main">
+                <a href="http://127.0.0.1:5501/index/HTML/Kate.html"
+                  >카테고리</a
+                >
+              </li>
+              <li class="l-main">
+                <a href="http://127.0.0.1:5501/index/HTML/myPage.html">MY</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- 헤더 끝 -->
+    <div class="find-container">
+      <div class="modal-img-back">
+        <div class="modal-img-win">
+          <!-- <img src="../../resources/image/스포츠/spo1.jpg" alt=""> -->
+        </div>
+      </div>
+      <div class="left">
+        <div class="left-top">
+          <h2>
+            <iconify-icon icon="material-symbols:search"></iconify-icon> 검색창
+            입니다.
+          </h2>
+        </div>
+        <div class="icon">
+          <input id="search" type="text" placeholder="영화제목 입력" />
+          <!-- <iconify-icon icon="material-symbols:search"></iconify-icon> -->
+        </div>
+      </div>
+      <div class="right">
+        <div class="right-img" id="imageContainer"></div>
+      </div>
+    </div>
+  </body>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="/index/jsvascript.js"></script>
+  <script src="/index/JS/find.js"></script>
+  <script src="/index/JS/modal.js"></script>
+  <script src="/index/JS/logout.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const header = document.querySelector("header");
+      const scrollOffset = 10; // Adjust this value based on when you want the color change to occur
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > scrollOffset) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    });
+  </script>
+</html>

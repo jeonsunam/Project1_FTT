@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원정보 수정</title>
+    <link rel="stylesheet" href="/index/CSS/changeInfo.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>회원정보 수정</h1>
+      </div>
+
+      <div class="form-container">
+        <form id="updateForm">
+          <label for="username">사용자명:</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="id">아이디:</label>
+          <input type="id" id="userid" name="email" required />
+
+          <label for="password">현재 비밀번호:</label>
+          <input type="password" id="password" name="password" />
+
+          <label for="newpassword">새 비밀번호:</label>
+          <input type="password" id="newpassword" name="newpassword" />
+
+          <button type="button" id="updatebtn">회원정보 수정</button>
+          <button type="button" id="backBtn">나가기</button>
+        </form>
+      </div>
+
+      <div id="updateResult" class="result"></div>
+    </div>
+  </body>
+  <script type="module">
+    import * as firebase from "../JS/firebase.js";
+    const {
+      db,
+      getDocs,
+      collection,
+      setDoc,
+      addDoc,
+      getDatas,
+      doc,
+      addDatas,
+      deleteDatas,
+      updateDatas,
+      deleteField,
+      getData,
+      addData,
+    } = firebase;
+
+    const userName = document.querySelector("#username");
+    const userId = document.querySelector("#userid");
+    const userPw = document.querySelector("#password");
+    const userNewPw = document.querySelector("#newpassword");
+    const updateBtn = document.querySelector("#updatebtn");
+    const text = document.querySelector(".result");
+    const backBtn = document.querySelector("#backBtn");
+
+    const idRegex = /^[a-zA-Z0-9]{4,12}$/;
+
+    const pwRegex =
+      /^(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
+
+    const nameRegex = /[가-힣a-zA-Z\s]{2,5}/;
+
+    const textStyle = (text.style.color = "red");
+
+    updateBtn.addEventListener("click", async function () {
+      const snapshot = await getData("FTT", "FTT1");
+      const { memberId, memberPassword, memberName } = snapshot.data();
+
+      if (nameRegex.test(document.querySelector("#username").value)) {
+        if (document.querySelector("#username").value != memberName) {
+          if (idRegex.test(document.querySelector("#userid").value)) {
+            if (document.querySelector("#userid").value != memberId) {
+              if (pwRegex.test(document.querySelector("#password").value)) {
+                if (
+                  document.querySelector("#password").value != memberPassword
+                ) {
+                  if (
+                    pwRegex.test(document.querySelector("#newpassword").value)
+                  ) {
+                    if (
+                      document.querySelector("#password").value ==
+                      document.querySelector("#newpassword").value
+                    ) {
+                      text.innerText = "회원정보가 수정되었습니다.";
+                      text.style.color = "#4caf50";
+
+                      // 회원정보 디비에 저장
+                      const updateObj = {
+                        memberId: document.querySelector("#userid").value,
+                        memberPassword:
+                          document.querySelector("#password").value,
+                        memberName: document.querySelector("#username").value,
+                        // 문서에서 잘못입력한 것을 지워주는 함수
+                        // memberTell: deleteField();
+                      };
+
+                      updateDatas("FTT", "FTT1", updateObj).then(() =>
+                        setTimeout(() => {
+                          location.href =
+                            "http://127.0.0.1:5501/index/HTML/main.html";
+                        }, 3000)
+                      );
+                    } else {
+                      text.innerText =
+                        "현재 비밀번호와 같습니다 다시 입력해주세요.";
+                      text.style.color = "red";
+                    }
+                  } else {
+                    text.innerText = "새로운 비밀번호를 알맞게 입력해주세요.";
+                    text.style.color = "red";
+                  }
+                } else {
+                  text.innerText = "이미 있는 비밀번호입니다.";
+                  text.style.color = "red";
+                }
+              } else {
+                text.innerText = "비밀번호를 알맞게 입력해주세요.";
+                text.style.color = "red";
+              }
+            } else {
+              text.innerText = "이미 있는 아이디입니다.";
+              text.style.color = "red";
+            }
+          } else {
+            text.innerText = "아이디를 알맞게 입력해주세요.";
+            text.style.color = "red";
+          }
+        } else {
+          text.innerText = "이미 있는 이름입니다.";
+          text.style.color = "red";
+        }
+      } else {
+        text.innerText = "사용자 이름을 알맞게 입력해주세요.";
+        // text.style.color = "red";
+        // textStyle;
+      }
+    });
+
+    backBtn.addEventListener("click", () => {
+      location.href = "http://127.0.0.1:5501/index/HTML/myPage.html";
+    });
+  </script>
+</html>

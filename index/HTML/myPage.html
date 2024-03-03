@@ -475,16 +475,6 @@
       });
     });
 
-    const memberInfo = {
-      memberId: "",
-      memberPassword: "",
-      memberName: "",
-      memberBirth: "",
-      memberPhoneNumber: "",
-      membergender: "",
-      memberLanguage: "",
-    };
-
     const pay = {
       payName: "",
       payQuality: "",
@@ -497,7 +487,7 @@
       const out = confirm("계정을 탈퇴하시겠습니까?");
       if (out == true) {
         addData(pay);
-        addDatas(memberInfo);
+        deleteDatas("FTT", "FTT1");
 
         alert("탈퇴되었습니다. 안녕히 가세요.");
         location.href = "../../index.html";

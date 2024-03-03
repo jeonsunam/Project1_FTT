@@ -74,18 +74,18 @@
       const { memberId, memberPassword, memberName } = snapshot.data();
 
       if (nameRegex.test(document.querySelector("#username").value)) {
-        if (document.querySelector("#username").value != memberName) {
+        if (document.querySelector("#username").value == memberName) {
           if (idRegex.test(document.querySelector("#userid").value)) {
-            if (document.querySelector("#userid").value != memberId) {
+            if (document.querySelector("#userid").value == memberId) {
               if (pwRegex.test(document.querySelector("#password").value)) {
                 if (
-                  document.querySelector("#password").value != memberPassword
+                  document.querySelector("#password").value == memberPassword
                 ) {
                   if (
                     pwRegex.test(document.querySelector("#newpassword").value)
                   ) {
                     if (
-                      document.querySelector("#password").value ==
+                      document.querySelector("#password").value !=
                       document.querySelector("#newpassword").value
                     ) {
                       text.innerText = "회원정보가 수정되었습니다.";
@@ -116,7 +116,7 @@
                     text.style.color = "red";
                   }
                 } else {
-                  text.innerText = "이미 있는 비밀번호입니다.";
+                  text.innerText = "비밀번호가 같지 않습니다.";
                   text.style.color = "red";
                 }
               } else {
@@ -124,7 +124,7 @@
                 text.style.color = "red";
               }
             } else {
-              text.innerText = "이미 있는 아이디입니다.";
+              text.innerText = "아이디가 같지 않습니다.";
               text.style.color = "red";
             }
           } else {
@@ -132,7 +132,7 @@
             text.style.color = "red";
           }
         } else {
-          text.innerText = "이미 있는 이름입니다.";
+          text.innerText = "이름이 같지 않습니다.";
           text.style.color = "red";
         }
       } else {

@@ -418,6 +418,7 @@
 
     const userName = document.querySelector(".profile-name");
     const mbsName = document.querySelector(".profile-ticket2");
+    const delBtn = document.querySelector(".setting-del");
 
     async function pushName() {
       const snapshot = await getData("FTT", "FTT1");
@@ -475,6 +476,16 @@
       });
     });
 
+    const memberInfo = {
+      memberId: "",
+      memberPassword: "",
+      memberName: "",
+      memberBirth: "",
+      memberPhoneNumber: "",
+      membergender: "",
+      memberLanguage: "",
+    };
+
     const pay = {
       payName: "",
       payQuality: "",
@@ -483,14 +494,14 @@
       pay: "",
       payMoney: "",
     };
-    delBtn.addEventListener("click", function () {
+    delBtn.addEventListener("click", async function () {
       const out = confirm("계정을 탈퇴하시겠습니까?");
       if (out == true) {
-        addData(pay);
-        deleteDatas("FTT", "FTT1");
-
-        alert("탈퇴되었습니다. 안녕히 가세요.");
-        location.href = "../../index.html";
+        await addData(pay);
+        await addDatas(memberInfo).then(() => {
+          alert("탈퇴되었습니다. 안녕히 가세요.");
+          location.href = "../../index.html";
+        });
       } else {
         alert("감사합니다.");
       }

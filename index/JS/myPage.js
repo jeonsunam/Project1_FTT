@@ -5,7 +5,7 @@ const popupCloseIr = document.querySelector(".popup-close");
 const setting = document.querySelectorAll(".set");
 const option = document.querySelector(".setting");
 const updateBtn = document.querySelector(".setting-info");
-const delBtn = document.querySelector(".setting-del");
+
 const allWin = document.querySelector("body");
 console.log(option);
 // console.log("hello");

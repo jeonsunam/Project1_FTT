@@ -1,4 +1,3 @@
-
 // console.log($(".movie-container"));
 const movieUrls2 = [
   "../../resources/image/공포/horror1.jpg",
@@ -76,48 +75,48 @@ const videoUrls2 = [
   "../../resources/video/코미디/medy9.mp4",
   "../../resources/video/코미디/medy10.mp4",
 ];
-const htmlUrls2 = [
-  "../../resources/html/공포/horror1.jpg",
-  "../../resources/html/공포/horror2.jpg",
-  "../../resources/html/공포/horror3.jpg",
-  "../../resources/html/공포/horror4.jpg",
-  "../../resources/html/공포/horror5.jpg",
-  "../../resources/html/공포/horror6.jpg",
-  "../../resources/html/공포/horror7.jpg",
-  "../../resources/html/공포/horror8.jpg",
-  "../../resources/html/공포/horror9.jpg",
-  "../../resources/html/공포/horror10.jpg",
-  "../../resources/html/스포츠/spo1.jpg",
-  "../../resources/html/스포츠/spo2.jpg",
-  "../../resources/html/스포츠/spo3.jpg",
-  "../../resources/html/스포츠/spo4.jpg",
-  "../../resources/html/스포츠/spo5.jpg",
-  "../../resources/html/스포츠/spo6.jpg",
-  "../../resources/html/스포츠/spo7.jpg",
-  "../../resources/html/스포츠/spo8.jpg",
-  "../../resources/html/스포츠/spo9.jpg",
-  "../../resources/html/스포츠/spo10.jpg",
-  "../../resources/html/액션·범죄/cri-and-act1.jpg",
-  "../../resources/html/액션·범죄/cri-and-act2.jpg",
-  "../../resources/html/액션·범죄/cri-and-act3.jpg",
-  "../../resources/html/액션·범죄/cri-and-act4.jpg",
-  "../../resources/html/액션·범죄/cri-and-act5.jpg",
-  "../../resources/html/액션·범죄/cri-and-act6.jpg",
-  "../../resources/html/코미디/medy1.jpg",
-  "../../resources/html/코미디/medy2.jpg",
-  "../../resources/html/코미디/medy3.jpg",
-  "../../resources/html/코미디/medy4.jpg",
-  "../../resources/html/코미디/medy5.jpg",
-  "../../resources/html/코미디/medy6.jpg",
-  "../../resources/html/코미디/medy7.jpg",
-  "../../resources/html/코미디/medy8.jpg",
-  "../../resources/html/코미디/medy9.jpg",
-  "../../resources/html/코미디/medy10.jpg",
+const imageUrls2 = [
+  "../../resources/image/코미디/medy1.jpg",
+  "../../resources/image/코미디/medy2.jpg",
+  "../../resources/image/코미디/medy3.jpg",
+  "../../resources/image/코미디/medy4.jpg",
+  "../../resources/image/코미디/medy5.jpg",
+  "../../resources/image/코미디/medy6.jpg",
+  "../../resources/image/코미디/medy7.jpg",
+  "../../resources/image/코미디/medy8.jpg",
+  "../../resources/image/코미디/medy9.jpg",
+  "../../resources/image/코미디/medy10.jpg",
+  "../../resources/image/스포츠/spo1.jpg",
+  "../../resources/image/스포츠/spo2.jpg",
+  "../../resources/image/스포츠/spo3.jpg",
+  "../../resources/image/스포츠/spo4.jpg",
+  "../../resources/image/스포츠/spo5.jpg",
+  "../../resources/image/스포츠/spo6.jpg",
+  "../../resources/image/스포츠/spo7.jpg",
+  "../../resources/image/스포츠/spo8.jpg",
+  "../../resources/image/스포츠/spo9.jpg",
+  "../../resources/image/스포츠/spo10.jpg",
+  "../../resources/image/공포/horror1.jpg",
+  "../../resources/image/공포/horror2.jpg",
+  "../../resources/image/공포/horror3.jpg",
+  "../../resources/image/공포/horror4.jpg",
+  "../../resources/image/공포/horror5.jpg",
+  "../../resources/image/공포/horror6.jpg",
+  "../../resources/image/공포/horror7.jpg",
+  "../../resources/image/공포/horror8.jpg",
+  "../../resources/image/공포/horror9.jpg",
+  "../../resources/image/공포/horror10.jpg",
+  "../../resources/image/액션·범죄/cri-and-act1.jpg",
+  "../../resources/image/액션·범죄/cri-and-act2.jpg",
+  "../../resources/image/액션·범죄/cri-and-act3.jpg",
+  "../../resources/image/액션·범죄/cri-and-act4.jpg",
+  "../../resources/image/액션·범죄/cri-and-act5.jpg",
+  "../../resources/image/액션·범죄/cri-and-act6.jpg",
 ];
 
 function shuffleArrays2(array1, array2, array3) {
   if (array1.length !== array2.length) {
-    throw new Error('두 배열의 길이가 동일해야 합니다.');
+    throw new Error("두 배열의 길이가 동일해야 합니다.");
   }
 
   // array1과 array2 모두 같은 방식으로 섞기
@@ -131,7 +130,8 @@ function shuffleArrays2(array1, array2, array3) {
   return [array1, array2, array3];
 }
 
-const [shuffledMovieUrls2, shuffledVideoUrls2, shuffledhtmlUrls2] = shuffleArrays2(movieUrls2, videoUrls2, htmlUrls2);
+const [shuffledMovieUrls2, shuffledVideoUrls2, shuffledimageUrls2] =
+  shuffleArrays2(movieUrls2, videoUrls2, imageUrls2);
 
 // Append all shuffled images to .movie-container
 shuffledMovieUrls2.forEach((url) => {
@@ -142,10 +142,9 @@ shuffledVideoUrls2.forEach((url) => {
   $(".gallery2").append(`<video src='${url}'></video>`);
 });
 
-// shuffledhtmlUrls2.forEach((url) => {
+// shuffledimageUrls2.forEach((url) => {
 //   const img = document.createElement("img");
 //   img.src = url;
-//   img.classList.add("htmlImg"); // 이미지 클래스 추가
+//   img.classList.add("imageImg"); // 이미지 클래스 추가
 //   $(".gallery2").append(img);
 // });
-

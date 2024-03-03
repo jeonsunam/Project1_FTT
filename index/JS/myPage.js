@@ -26,15 +26,5 @@ option.addEventListener("click", () => {
 });
 
 updateBtn.addEventListener("click", () => {
-  location.href = "http://127.0.0.1:5501/index/HTML/changeInfo.html";
+  location.href = "./changeInfo.html";
 });
-
-// allWin.addEventListener("click", (event) => {
-//   if (event.target === option) {
-//     setting[0].style.display = "block";
-//     setting[1].style.display = "block";
-//   } else {
-//     setting[0].style.display = "none";
-//     setting[1].style.display = "none";
-//   }
-// });

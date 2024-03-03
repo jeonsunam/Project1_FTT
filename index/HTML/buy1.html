@@ -144,7 +144,7 @@ btn.addEventListener("click", async function (){
       addData(pay).then(function () {
         alert("감사합니다.");
       window.opener.location.href =
-        "http://127.0.0.1:5501/index/HTML/main.html";
+        "./main.html";
       window.close();
       });
      
@@ -158,26 +158,6 @@ btn.addEventListener("click", async function (){
   }
 });
 
-    //   content.insertAdjacentHTML(
-    //     "beforebegin",
-    //     `
-    //     <p><h1>${payname}</h1></p>
-    //     <p>${payquality}</p>
-    //     <p>${payuse}</p>
-    //     <p>${paywatch}</p>
-    // `
-    //   );
-
-    //   table.insertAdjacentHTML(
-    //     "beforeend",
-    //     `
-    //       <tr>
-    //         <th>${paymoneyname}</th>
-    //         <td>${paymoney}</td>
-    //       </tr>
-    //     `
-    //   );
-    // }
 
     // getPay();
   </script>

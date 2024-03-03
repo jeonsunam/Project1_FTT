@@ -180,11 +180,9 @@
           <!-- <input type="button" name="cancel" value="취소" /> -->
         </div>
         <div class="modal-find">
-          <a href="http://127.0.0.1:5501/index/HTML/findId.html">아이디 찾기</a>
-          <a href="http://127.0.0.1:5501/index/HTML/findId.html"
-            >비밀번호 찾기</a
-          >
-          <a href="signUp.html">회원가입</a>
+          <a href="./findId.html">아이디 찾기</a>
+          <a href="./findId.html">비밀번호 찾기</a>
+          <a href="./signUp.html">회원가입</a>
         </div>
         <ul class="modal-footer">
           <li>이용약관</li>
@@ -320,7 +318,7 @@
         console.log("1");
         if (document.querySelector("#loginPw").value == memberPassword) {
           console.log("2");
-          location.href = "http://127.0.0.1:5501/index/HTML/main.html";
+          location.href = "./main.html";
         } else {
           alert("비밀번호를 다시 입력해주세요");
           console.log("3");

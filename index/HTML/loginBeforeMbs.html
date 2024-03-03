@@ -13,7 +13,7 @@
     <header>
       <div class="container">
         <h1>
-          <a href="http://127.0.0.1:5501/index/HTML/page.html"> FTT </a>
+          <a href="../../index.html"> FTT </a>
         </h1>
         <div id="header-menu">
           <nav id="gnb">
@@ -32,15 +32,13 @@
           <nav id="lnb">
             <ul>
               <li class="l-main">
-                <a href="http://127.0.0.1:5501/index/HTML/page.html">홈</a>
+                <a href="../../index.html">홈</a>
               </li>
               <li class="l-main">
                 <a href="#" class="kategori">카테고리</a>
               </li>
               <li class="l-main">
-                <a href="http://127.0.0.1:5501/index/HTML/agree.html"
-                  >회원가입</a
-                >
+                <a href="./agree.html">회원가입</a>
               </li>
             </ul>
           </nav>
@@ -272,11 +270,9 @@
           <!-- <input type="button" name="cancel" value="취소" /> -->
         </div>
         <div class="modal-find">
-          <a href="http://127.0.0.1:5501/index/HTML/findId.html">아이디 찾기</a>
-          <a href="http://127.0.0.1:5501/index/HTML/findId.html"
-            >비밀번호 찾기</a
-          >
-          <a href="http://127.0.0.1:5501/index/HTML/agree.html">회원가입</a>
+          <a href="./findId.html">아이디 찾기</a>
+          <a href="./findId.html">비밀번호 찾기</a>
+          <a href="./agree.html">회원가입</a>
         </div>
         <ul class="modal-footer">
           <li>이용약관</li>
@@ -290,7 +286,6 @@
   <!-- <script src="../JS/logout.js"></script> -->
   <!-- <script src="../JS/buy.js"></script> -->
   <script src="../JS/Login.js"></script>
-  <script src="../JS/loginBeforeMbs.js"></script>
   <script type="module">
     import * as firebase from "../JS/firebase.js";
     const {
@@ -310,11 +305,52 @@
     const checkBtn = document.querySelector(".login-go");
     const id = document.querySelector("input[name = id]").value;
     const password = document.querySelector("input[name = password]").value;
-
+    const find = document.querySelector("#findMovie");
     const kategori = document.querySelector(".kategori");
+    const login = document.querySelectorAll(".login");
 
-    kategori.addEventListener("click", () => {
-      alert("로그인 해주세요");
+    const modalClose = document.querySelector(".modal-close");
+    const modalBack = document.querySelector(".modal-back");
+
+    const msCard = document.querySelectorAll(".ms-card-ac");
+
+    msCard.forEach((el) => {
+      el.addEventListener("click", () => {
+        alert("로그인 해주세요");
+        modalBack.style.display = "block";
+      });
+    });
+
+    login.forEach((el) => {
+      el.addEventListener("click", () => {
+        modalBack.style.display = "block";
+
+        checkBtn.addEventListener("click", async function () {
+          const snapshot = await getDatas("FTT");
+          snapshot.forEach((doc) => {
+            const { memberId, memberPassword } = doc.data();
+
+            if (document.querySelector("input[name = id]").value == memberId) {
+              console.log("1");
+              if (
+                document.querySelector("input[name = password]").value ==
+                memberPassword
+              ) {
+                console.log("2");
+                location.href = "./membership.html";
+              } else {
+                alert("비밀번호를 다시 입력해주세요");
+                console.log("3");
+              }
+            } else {
+              console.log("먼저실행");
+            }
+          });
+        });
+      });
+    });
+
+    find.addEventListener("click", () => {
       modalBack.style.display = "block";
 
       checkBtn.addEventListener("click", async function () {
@@ -329,7 +365,34 @@
               memberPassword
             ) {
               console.log("2");
-              location.href = "http://127.0.0.1:5501/index/HTML/Kate.html";
+              location.href = "./find.html";
+            } else {
+              alert("비밀번호를 다시 입력해주세요");
+              console.log("3");
+            }
+          } else {
+            console.log("먼저실행");
+          }
+        });
+      });
+    });
+
+    kategori.addEventListener("click", () => {
+      modalBack.style.display = "block";
+
+      checkBtn.addEventListener("click", async function () {
+        const snapshot = await getDatas("FTT");
+        snapshot.forEach((doc) => {
+          const { memberId, memberPassword } = doc.data();
+
+          if (document.querySelector("input[name = id]").value == memberId) {
+            console.log("1");
+            if (
+              document.querySelector("input[name = password]").value ==
+              memberPassword
+            ) {
+              console.log("2");
+              location.href = "./Kate.html";
             } else {
               alert("비밀번호를 다시 입력해주세요");
               console.log("3");
@@ -353,7 +416,7 @@
             memberPassword
           ) {
             console.log("2");
-            location.href = "http://127.0.0.1:5501/index/HTML/membership.html";
+            location.href = "./membership.html";
           } else {
             alert("비밀번호를 다시 입력해주세요");
             console.log("3");

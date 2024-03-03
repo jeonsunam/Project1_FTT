@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>회원정보 수정</title>
-    <link rel="stylesheet" href="/index/CSS/changeInfo.css" />
+    <link rel="stylesheet" href="../CSS/changeInfo.css" />
   </head>
   <body>
     <div class="container">
@@ -103,8 +103,7 @@
 
                       updateDatas("FTT", "FTT1", updateObj).then(() =>
                         setTimeout(() => {
-                          location.href =
-                            "http://127.0.0.1:5501/index/HTML/main.html";
+                          location.href = "./main.html";
                         }, 3000)
                       );
                     } else {
@@ -144,7 +143,7 @@
     });
 
     backBtn.addEventListener("click", () => {
-      location.href = "http://127.0.0.1:5501/index/HTML/myPage.html";
+      location.href = "./myPage.html";
     });
   </script>
 </html>

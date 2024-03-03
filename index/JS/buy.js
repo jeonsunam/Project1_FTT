@@ -28,25 +28,6 @@ const check = document.querySelectorAll("input[name=check]");
 const content = document.querySelector(".buyPopup-content");
 const table = document.querySelector(".two-table");
 
-// card.forEach((el) => {
-//   el.addEventListener("click", () => {
-//     if (document.querySelector(".card.selected")) {
-//       btn.removeAttribute("disabled");
-//       btn.style.backgroundColor = "red";
-//     }
-
-//     if (!el.classList.contains("selected")) {
-//       card.forEach((cd) => {
-//         cd.classList.remove("selected");
-//       });
-//       el.classList.add("selected");
-//     } else {
-//       el.classList.remove("selected");
-//       alert("결제 수단을 선택하세요");
-//       btn.style.backgroundColor = "";
-//     }
-//   });
-// });
 card.forEach((el) => {
   el.addEventListener("click", () => {
     if (!el.classList.contains("selected")) {
@@ -127,13 +108,3 @@ for (let i = 0; i < check.length; i++) {
     }
   });
 }
-
-// btn.addEventListener("click", () => {
-//   if (checkAll.checked) {
-//     alert("감사합니다.");
-//     window.opener.location.href = "http://127.0.0.1:5501/index/HTML/main.html";
-//     window.close();
-//   } else {
-//     alert("필수 항목을 체크해주세요");
-//   }
-// });

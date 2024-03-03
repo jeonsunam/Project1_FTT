@@ -23,7 +23,8 @@ for (let i = 0; i < check.length; i++) {
 
 btn.addEventListener("click", () => {
   if (checkAll.checked) {
-    window.location.href = "./signUp.html";
+    window.location.href =
+      "https://jeonsunam.github.io/Project1_FTT/index/HTML/signUp.html";
   } else {
     alert("필수 항목을 체크해주세요");
   }
